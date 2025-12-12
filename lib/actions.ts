@@ -1,4 +1,5 @@
 "use server";
+import { redirect } from "next/navigation";
 import { encrypt } from "./session";
 import { cookies } from "next/headers";
 
@@ -32,3 +33,9 @@ export const login = async (email: string, password: string) => {
   }
   return { isAuth: false, role: null, email: null };
 };
+
+export async function logout() {
+  const cookieStore = await cookies();
+  cookieStore.delete("token");
+  redirect("/login");
+}

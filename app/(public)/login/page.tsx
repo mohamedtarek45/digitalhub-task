@@ -25,6 +25,7 @@ const Page = () => {
       const user = await login(values.email, values.password);
       if (user.isAuth) {
         router.push("/dashboard");
+        return;
       }
       if (!user.isAuth) {
         setError(true);
@@ -40,7 +41,7 @@ const Page = () => {
           className="bg-white/95 backdrop-blur-sm p-6 sm:p-8 rounded-2xl shadow-2xl"
           onSubmit={formik.handleSubmit}
         >
-          {/* Header */}
+
           <div className="text-center mb-8">
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-2">
               Welcome Back
@@ -50,7 +51,6 @@ const Page = () => {
             </p>
           </div>
 
-          {/* Email */}
           <div className="mb-5">
             <label
               htmlFor="email"
@@ -75,7 +75,6 @@ const Page = () => {
             )}
           </div>
 
-          {/* Password */}
           <div className="mb-6">
             <label
               htmlFor="password"
@@ -116,7 +115,7 @@ const Page = () => {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-linear-to-r from-blue-600 to-purple-600 text-white py-3 rounded-lg hover:from-blue-700 hover:to-purple-700 transition duration-300 font-semibold shadow-lg hover:shadow-xl transform disabled:opacity-70 disabled:cursor-not-allowed text-sm sm:text-base"
+            className="cursor-pointer w-full bg-linear-to-r from-blue-600 to-purple-600 text-white py-3 rounded-lg hover:from-blue-700 hover:to-purple-700 transition duration-300 font-semibold shadow-lg hover:shadow-xl transform disabled:opacity-70 disabled:cursor-not-allowed text-sm sm:text-base"
           >
             {loading ? (
               <div className="size-6 border-b rounded-full animate-spin mx-auto"></div>
