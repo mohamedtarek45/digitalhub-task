@@ -1,37 +1,101 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+📊 DigitalHub Project Dashboard
 
-## Getting Started
+A modern Project Dashboard Web App built with Next.js 16, featuring real-time updates, role-based access, and a responsive UI for managing projects and tasks efficiently.
 
-First, run the development server:
+🚀 Live Demo
 
-```bash
+Frontend (Vercel)
+https://digitalhub-task.vercel.app/
+
+WebSocket Server (Express + Socket.IO)
+https://digitalhubtasksocket-5ixjjh42.b4a.run/
+
+🧠 Overview
+
+DigitalHub allows teams to manage projects and tasks with instant synchronization across users.
+Projects and tasks are stored in Firebase Firestore, while Socket.IO handles real-time updates.
+
+🔐 Authentication & Roles
+
+JWT-based authentication
+
+Roles:
+
+Admin
+
+Project Manager
+
+Developer
+
+Demo Accounts
+admin@test.com | test1234
+pm@test.com    | test1234
+dev@test.com   | test1234
+
+✨ Features
+
+Project dashboard with:
+
+Pagination & sorting
+
+Inline editing
+
+Project details & task management
+
+Real-time updates using WebSockets
+
+Optimistic UI updates
+
+Responsive & accessible UI
+
+Charts for project progress
+
+PWA support (offline caching)
+
+🛠 Tech Stack
+
+Frontend
+
+Next.js 16.0.8
+
+TypeScript
+
+Tailwind CSS
+
+Redux Toolkit
+
+React Query
+
+Yup
+
+Chart.js
+
+Socket.IO Client
+
+Backend
+
+Node.js
+
+Express
+
+Socket.IO
+
+Database
+
+Firebase Firestore
+
+⚙️ Environment Variables
+NEXT_PUBLIC_SOCKET_URL=
+JWT_SECRET=
+
+▶️ Run Locally
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+👨‍💻 Author
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Mohamed Tarek
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+GitHub: https://github.com/mohamedtarek45
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-"# digitalhub-task" 
+Portfolio: https://portfolio2-tau-ruby.vercel.app
