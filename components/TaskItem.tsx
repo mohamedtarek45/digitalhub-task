@@ -1,8 +1,9 @@
 "use client";
 import { useState } from "react";
-import ModalEditTask from "./ModalEditTask";
 import { CheckCircle2, User } from "lucide-react";
 import type { Task } from "@/lib/firebaseQueries";
+import dynamic from "next/dynamic";
+const ModalEditTask = dynamic(() => import("./ModalEditTask"), { ssr: false });
 const getPriorityColor = (priority: string) => {
   switch (priority.toLowerCase()) {
     case "high":

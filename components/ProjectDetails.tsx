@@ -1,5 +1,5 @@
 "use client";
-import { notFound } from 'next/navigation'
+import { notFound } from "next/navigation";
 import { useGetProject } from "@/hooks/projects";
 import { Timestamp } from "firebase/firestore";
 import {
@@ -14,8 +14,11 @@ import {
 import TaskItem from "./TaskItem";
 import { useState, useEffect, useMemo } from "react";
 import { useSelector } from "react-redux";
-import Modal from "./ModalAddTask";
+
 import { RootState } from "@/store/store";
+import dynamic from "next/dynamic";
+const Modal = dynamic(() => import("./ModalAddTask"), { ssr: false });
+
 const formatDate = (date: Timestamp) => date.toDate().toLocaleDateString();
 
 const ProjectDetails = ({ id }: { id: string }) => {
@@ -44,10 +47,10 @@ const ProjectDetails = ({ id }: { id: string }) => {
 
   if (isPending)
     return (
-      <div className="flex items-center justify-center min-h-screen bg-gray-50">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
-          <p className="text-gray-600 font-medium">Loading project...</p>
+      <div className="min-h-screen px-4 py-8">
+        <div className="container mx-auto space-y-6 animate-pulse">
+          <div className="h-48 bg-gray-200 rounded-xl" />
+          <div className="h-96 bg-gray-200 rounded-xl" />
         </div>
       </div>
     );
@@ -64,8 +67,7 @@ const ProjectDetails = ({ id }: { id: string }) => {
       </div>
     );
 
-  if (!data)
-    return notFound();
+  if (!data) return notFound();
 
   const getStatusColor = (status: string) => {
     switch (status.toLowerCase()) {
@@ -217,11 +219,13 @@ const ProjectDetails = ({ id }: { id: string }) => {
               <option value="low">Low Priority</option>
             </select>
           </div>
-          <TaskItem
-            projectId={id}
-            data={filteredData ?? []}
-            role={role ?? " "}
-          />
+          <div className="min-h-[400px]">
+            <TaskItem
+              projectId={id}
+              data={filteredData ?? []}
+              role={role ?? " "}
+            />
+          </div>
         </div>
       </div>
     </div>
