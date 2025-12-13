@@ -7,8 +7,6 @@ A modern Project Dashboard Web App built with Next.js 16, featuring real-time up
 Frontend (Vercel)
 https://digitalhub-task.vercel.app/
 
-WebSocket Server (Express + Socket.IO)
-https://digitalhubtasksocket-5ixjjh42.b4a.run/
 
 🧠 Overview
 
@@ -51,6 +49,14 @@ Responsive & accessible UI
 Charts for project progress
 
 PWA support (offline caching)
+
+⚠️ Important Note (WebSocket)
+
+The WebSocket server is hosted on a free hosting plan, which may go idle after approximately one hour of inactivity.
+
+Additionally, the WebSocket server URL may change periodically due to the limitations of the free hosting environment.
+
+📹 A recorded demo video showcasing the real-time functionality while the server is active is attached in the assessment email.
 
 🛠 Tech Stack
 
