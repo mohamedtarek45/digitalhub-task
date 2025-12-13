@@ -1,8 +1,6 @@
 "use client";
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+import "@/util/chartSetup";
 import { Doughnut } from "react-chartjs-2";
-
-ChartJS.register(ArcElement, Tooltip, Legend);
 
 const DoughnutChart = ({
   labels,
@@ -53,7 +51,7 @@ const DoughnutChart = ({
       <h3 className="text-center text-xl lg:text-2xl font-bold mb-6 text-gray-800">
         {Adress}
       </h3>
-      <div className="w-full max-w-xs mx-auto">
+      <div className="w-full max-w-xs mx-auto h-[260px]">
         <Doughnut data={data} options={options} />
       </div>
     </div>

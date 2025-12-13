@@ -1,6 +1,10 @@
 "use client";
+import dynamic from "next/dynamic";
 import { useGetProjects } from "@/hooks/projects";
-import DoughnutChart from "./DoughnutChart";
+
+const DoughnutChart = dynamic(() => import("./DoughnutChart"), {
+  ssr: false,
+});
 
 const Chart = () => {
   const { data } = useGetProjects();

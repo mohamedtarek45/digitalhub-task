@@ -60,10 +60,10 @@ const ProjectsList = () => {
 
   if (isPending)
     return (
-      <div className="flex items-center justify-center min-h-screen bg-gray-50">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
-          <p className="text-gray-600 font-medium">Loading project...</p>
+      <div className="container p-6 min-h-[600px]">
+        <div className="animate-pulse space-y-4">
+          <div className="h-10 bg-gray-200 rounded" />
+          <div className="h-64 bg-g ray-200 rounded" />
         </div>
       </div>
     );
@@ -92,7 +92,7 @@ const ProjectsList = () => {
           Reset
         </button>
       </div>
-      <div className="overflow-x-auto bg-white rounded-lg shadow-md border border-gray-200">
+      <div className="overflow-x-auto bg-white rounded-lg shadow-md border border-gray-200 min-h-[400px]">
         <table className="min-w-full text-sm text-center">
           <thead className="bg-gray-200 text-gray-700 ">
             <tr>
@@ -150,7 +150,7 @@ const ProjectsList = () => {
           <ProjectItem data={paginatedData ?? []} />
         </table>
       </div>
-      <div className="mt-6">
+      <div className="mt-6 min-h-[60px]">
         <Pagination
           currentPage={page}
           setPage={setPage}
